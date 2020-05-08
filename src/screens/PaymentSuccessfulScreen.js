@@ -12,7 +12,7 @@ function PaymentSuccessfulScreen(navigation) {
             </View>
 
             <View style={styles.infoContainer}>
-                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+                <Text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Text>
             </View>
 
             <View >
@@ -27,27 +27,33 @@ function PaymentSuccessfulScreen(navigation) {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.iconText}>
-            <Text style={styles.skip}>Preview</Text>
-            
-            <Entypo style={styles.icon} name="progress-full" size={25} color="#8729f2" marginTop={10} />
-            
-            <Text style={styles.previous}>Skip</Text>
-                        
-        </View>
+        <View style={styles.lastContainer}>
+                    <Entypo name="progress-two" size={25} style={styles.icon} />
+                    <TouchableOpacity  style={styles.Skip}
+                     onPress={() => { navigation.navigate('PaymentSuccessful') }} >
+                     <Text >Skip</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.Previous}
+                     onPress={() => { navigation.navigate('OnlineShopping') }} >
+                       <Text >Previous</Text>
+                    </TouchableOpacity>
+                   
+                  
+                </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     container: {
-      marginTop:50,
+      marginTop:20,
       marginHorizontal: 50,
     },
   
 
   image: {
-    marginTop: 10,
+    marginTop: 40,
     width: 200,
     height: 200,
     justifyContent: "center",
@@ -60,7 +66,7 @@ buttonContainer:{
     justifyContent:"center",
     alignItems:"center",
     borderRadius:20,
-    marginVertical:50,
+    marginVertical:30,
     height:40,
     width: 110,
     marginHorizontal: 80
@@ -85,19 +91,26 @@ infoContainer:{
     
 },
 
-iconText: {
-    flexDirection: "row",
-    alignSelf: "center",
-    
-    
+lastContainer: {
+  flexDirection: "row",
+  alignItems: "center"
+ },
 
+ icon: {
+  marginLeft: 120,
+  color: "#b978eb",
+},
+Skip: {
+  position: "absolute",
+  marginLeft: 250,
+  color: "#c6becc",
+},
+Previous: {
+  color: "#c6becc",
+  position: "absolute",
+  left: -25
 },
 
-icon: {
-    marginRight:100,
-    alignSelf: "center",
-    marginHorizontal: 100
-},
 
 
 

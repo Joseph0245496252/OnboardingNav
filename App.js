@@ -13,15 +13,16 @@ const Stack = createStackNavigator()
 export default function App() {
   return (
     <NavigationContainer>
+
         <Stack.Navigator initialRouteName="OnlineShopping"
                 screenOptions={{
                   headerTitleAlign:"center",
-                }}
+                }} 
         >
           <Stack.Screen 
-          // options={{
-          //   title:"My Shop "
-          // }}
+          options={{
+            title:"Window Shopping "
+          }}
           name="OnlineShopping" component={OnlineShoppingScreen} />
           <Stack.Screen name="AddToCart" component={AddToCartScreen} />
           <Stack.Screen name="PaymentSuccessful" component={PaymentSuccessfulScreen} />

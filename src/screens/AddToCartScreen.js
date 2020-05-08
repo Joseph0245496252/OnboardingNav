@@ -20,33 +20,41 @@ function AddToCartScreen(navigation) {
         </View>
 
         <View>
-          <TouchableOpacity onPress={()=> {
-            navigation.navigate("PaymentSuccessfulScreen")
-          }} style={styles.buttonContainer}>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate("PaymentSuccessful")
+          }}
+          style={styles.buttonContainer}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.iconText}>
-            <Text style={styles.skip}>Preview</Text>
-            
-            <Entypo style={styles.icon} name="progress-two" size={25} color="#8729f2" marginTop={10} />
-            
-            <Text style={styles.previous}>Skip</Text>
-                        
-        </View>
+        <View style={styles.lastContainer}>
+                    <Entypo name="progress-two" size={25} style={styles.icon} />
+                    <TouchableOpacity  style={styles.Skip}
+                     onPress={() => { navigation.navigate('PaymentSuccessful') }} >
+                     <Text >Skip</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  style={styles.Previous}
+                     onPress={() => { navigation.navigate('OnlineShopping') }} >
+                       <Text >Previous</Text>
+                    </TouchableOpacity>
+                   
+                  
+                </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     container: {
-      marginTop:50,
+      marginTop:5,
       marginHorizontal: 50,
     },
   
 
   image: {
+    marginTop: 10,
     width: 200,
     height: 200,
     justifyContent: "center",
@@ -55,7 +63,7 @@ const styles = StyleSheet.create({
 },
 
 buttonContainer:{
-    backgroundColor:"#769ae8",
+    backgroundColor:"#8729f2",
     justifyContent:"center",
     alignItems:"center",
     borderRadius:20,
@@ -84,21 +92,26 @@ infoContainer:{
     
 },
 
-iconText: {
-    flexDirection: "row",
-    alignSelf: "center",
-    
-    
+lastContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginTop: -20
+ },
 
+ icon: {
+  marginLeft: 120,
+  color: "#b978eb",
 },
-
-icon: {
-    marginRight:100,
-    alignSelf: "center",
-    marginHorizontal: 100
+Skip: {
+  position: "absolute",
+  marginLeft: 250,
+  color: "#c6becc",
 },
-
-
+Previous: {
+  color: "#c6becc",
+  position: "absolute",
+  left: -25
+},
 
 });
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity,} from 'react-native'
 import {Entypo} from '@expo/vector-icons'
 
-function PaymentSuccessfulScreen() {
+function PaymentSuccessfulScreen(navigation) {
     
     return (
         <View style={styles.container}>
@@ -20,7 +20,9 @@ function PaymentSuccessfulScreen() {
         </View>
 
         <View>
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate("OnlineShopping")
+          }}style={styles.buttonContainer}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
         </View>
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
   
 
   image: {
+    marginTop: 10,
     width: 200,
     height: 200,
     justifyContent: "center",

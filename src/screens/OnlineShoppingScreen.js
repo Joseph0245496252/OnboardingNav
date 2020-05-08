@@ -22,33 +22,32 @@ function OnlineShoppingScreen({navigation}) {
         <View>
           <TouchableOpacity onPress={()=>{
             navigation.navigate("AddToCart")
-          }} style={styles.buttonContainer}>
+          }}
+          style={styles.buttonContainer}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.iconText}>
-            <Entypo style={styles.icon} name="progress-one" size={25} color="#8729f2" marginTop={10} />
-            
-            <Text style={styles.input}>Skip</Text>
-                        
-        </View>
+        <View style={styles.lastContainer}>
+                    <Entypo name="progress-two" size={25} style={styles.icon} />
+                    <TouchableOpacity  style={styles.Skip}
+                     onPress={() => { navigation.navigate('PaymentSuccessful') }} >
+                     <Text >Skip</Text>
+                    </TouchableOpacity>
+          </View>
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     container: {
-    //   flex: 1,
-    //   backgroundColor: '#fff',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-      marginTop:50,
+      marginTop:5,
       marginHorizontal: 50,
     },
   
 
   image: {
+    marginTop: 10,
     width: 200,
     height: 200,
     justifyContent: "center",
@@ -86,20 +85,22 @@ infoContainer:{
     
 },
 
-iconText: {
-    flexDirection: "row",
-    alignSelf: "center",
-    
-    
-
-},
+lastContainer: {
+  flexDirection: "row",
+  alignItems: "center",
+  marginTop: -20
+ },
 
 icon: {
-    marginRight:100,
-    alignSelf: "center",
-    marginHorizontal: 130
-   
+  marginLeft: 120,
+  color: "#b978eb",
 
+
+},
+Skip: {
+  position: "absolute",
+  marginLeft: 250,
+  color: "#c6becc",
 },
 
 

@@ -19,9 +19,9 @@ export default function App() {
                 }}
         >
           <Stack.Screen 
-          options={{
-            title:"My Shop "
-          }}
+          // options={{
+          //   title:"My Shop "
+          // }}
           name="OnlineShopping" component={OnlineShoppingScreen} />
           <Stack.Screen name="AddToCart" component={AddToCartScreen} />
           <Stack.Screen name="PaymentSuccessful" component={PaymentSuccessfulScreen} />
